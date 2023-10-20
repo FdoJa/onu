@@ -20,5 +20,4 @@ RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.2
 
 RUN protoc --go_out=. --go-grpc_out=. proto/*.proto
 
-EXPOSE 80
 ENTRYPOINT ["/app/bin"]
