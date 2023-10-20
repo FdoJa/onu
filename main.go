@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	"log"
-	"net"
 	"strings"
 
 	pb "github.com/FdoJa/ONU/proto"
@@ -12,19 +11,6 @@ import (
 )
 
 func main() {
-	lis, err := net.Listen("tcp", ":80")
-	if err != nil {
-		log.Fatalf("Fallo en escuchar: %v", err)
-	}
-
-	s := grpc.NewServer()
-
-	fmt.Println("Servidor ONU escuchando en :80")
-
-	if err := s.Serve(lis); err != nil {
-		log.Fatalf("Fallo en serve: %v", err)
-	}
-
 	// Dirección OMS
 	nameNodeAddr := "10.6.46.108:8080"
 
