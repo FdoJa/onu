@@ -23,7 +23,13 @@ func main() {
 			return
 		}
 
-		if strings.ToUpper(status) == "INFECTADOS" || strings.ToUpper(status) == "MUERTOS" {
+		if strings.ToUpper(status) == "INFECTADOS" {
+			status = "infectado"
+		} else if strings.ToUpper(status) == "MUERTOS" {
+			status = "muerto"
+		}
+
+		if status == "infectado" || status == "muerto" {
 			conn, err := grpc.Dial(nameNodeAddr, grpc.WithInsecure())
 			if err != nil {
 				log.Fatalf("No se pudo conectar al DataNode: %v", err)
@@ -43,7 +49,7 @@ func main() {
 
 				for _, dato := range res.Datos {
 					fmt.Printf("Entro al for")
-					fmt.Printf("%s %s\\n", dato.Nombre, dato.Apellido)
+					fmt.Printf("%s %s\n", dato.Nombre, dato.Apellido)
 				}
 			}
 
