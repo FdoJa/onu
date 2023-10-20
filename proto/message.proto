@@ -1,0 +1,31 @@
+syntax = "proto3";
+option go_package = "github.com/FdoJa/ONU/proto";
+package grpc;
+
+service NameNode{
+  rpc Recepcion_Info (Datos) returns (Recepcion) {}
+  rpc ConsultarNombres (Estado_Persona) returns (Lista_Datos_DataNode) {}
+}
+
+message Datos {
+  string nombre = 1;
+  string apellido = 2;
+  string estado = 3;
+}
+
+message Recepcion{
+  string ok = 1;
+}
+
+message Estado_Persona{
+  string estado = 1;
+}
+
+message Datos_DataNode {
+  string nombre = 1;
+  string apellido = 2;
+}
+
+message Lista_Datos_DataNode {
+  repeated Datos_DataNode datos = 1;
+}
