@@ -39,8 +39,11 @@ func main() {
 			if err != nil {
 				log.Fatalf("Error al pedir datos en la OMS: %v", err)
 			} else {
+				fmt.Printf("Recibe algo que no es un error")
+
 				for _, dato := range res.Datos {
-					fmt.Printf("%s %s\n", dato.Nombre, dato.Apellido)
+					fmt.Printf("Entro al for")
+					fmt.Printf("%s %s\\n", dato.Nombre, dato.Apellido)
 				}
 			}
 

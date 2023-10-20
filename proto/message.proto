@@ -29,3 +29,13 @@ message Datos_DataNode {
 message Lista_Datos_DataNode {
   repeated Datos_DataNode datos = 1;
 }
+
+message Registro {
+  string id = 1;
+  string nombre = 2;
+  string apellido = 3;
+}
+
+message Id{
+    repeated string lista_id = 1;
+}
