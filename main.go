@@ -45,14 +45,10 @@ func main() {
 			if err != nil {
 				log.Fatalf("Error al pedir datos en la OMS: %v", err)
 			} else {
-				fmt.Printf("Recibe algo que no es un error")
-
 				for _, dato := range res.Datos {
-					fmt.Printf("Entro al for")
-					fmt.Printf("%s %s\n", dato.Nombre, dato.Apellido)
+					log.Println("%s %s\n", dato.Nombre, dato.Apellido)
 				}
 			}
-
 		} else {
 			log.Printf("Error: Elige una opción válida")
 		}
