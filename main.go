@@ -24,9 +24,9 @@ func main() {
 		}
 
 		if strings.ToUpper(status) == "INFECTADOS" {
-			status = "infectado"
+			status = "INFECTADO"
 		} else if strings.ToUpper(status) == "MUERTOS" {
-			status = "muerto"
+			status = "MUERTO"
 		}
 
 		if status == "infectado" || status == "muerto" {
