@@ -46,7 +46,7 @@ func main() {
 				log.Fatalf("Error al pedir datos en la OMS: %v", err)
 			} else {
 				for _, dato := range res.Datos {
-					log.Println("%s %s\n", dato.Nombre, dato.Apellido)
+					log.Printf("%s %s\n", dato.Nombre, dato.Apellido)
 				}
 			}
 		} else {
